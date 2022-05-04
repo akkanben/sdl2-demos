@@ -1,0 +1,8 @@
+*.lo
+*.o
+*.so
+*.la
+*.a
+*.out
+compile_flags.txt
+main
