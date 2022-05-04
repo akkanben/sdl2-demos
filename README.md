@@ -13,3 +13,9 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 - A hello world of sorts for creating a window in SDL2. 
 - Creates a window and destroys the window after 5 seconds.
 - The window pointer is created from the return of [SDL_CreateWindow()](https://wiki.libsdl.org/SDL_CreateWindow).
+
+### Simple Events
+
+- Uses the [SDL_PollEvent](https://wiki.libsdl.org/SDL_PollEvent) queue to log keyboard presses and mouse movements.
+- Prints to the console the name of the key pressed, the coordinates of the mouse movement, or quits the application when the window close button is pressed.
+
