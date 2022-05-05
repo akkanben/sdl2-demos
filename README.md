@@ -19,3 +19,7 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 - Uses the [SDL_PollEvent](https://wiki.libsdl.org/SDL_PollEvent) queue to log keyboard presses and mouse movements.
 - Prints to the console the name of the key pressed, the coordinates of the mouse movement, or quits the application when the window close button is pressed.
 
+### Simple Surface
+
+- Uses [SDL_GetWindowSurface](https://wiki.libsdl.org/SDL_GetWindowSurface) and [SDL_BlitSurface](https://wiki.libsdl.org/SDL_BlitSurface) to apply .bmp images to the window.
+- Cycle through 5 images with the spacebar.
