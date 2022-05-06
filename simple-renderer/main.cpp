@@ -46,12 +46,27 @@ int main() {
 
   SDL_SetRenderDrawColor(renderer, 0, 255, 0, SDL_ALPHA_OPAQUE);
   SDL_RenderDrawRect(renderer, &rectangle01);
+  rectangle01.x += 5;
+  rectangle01.y += 5;
+  rectangle01.w -= 10;
+  rectangle01.h -= 10;
+  SDL_RenderFillRect(renderer, &rectangle01);
 
   SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
   SDL_RenderDrawRect(renderer, &rectangle02);
+  rectangle02.x += 5;
+  rectangle02.y += 5;
+  rectangle02.w -= 10;
+  rectangle02.h -= 10;
+  SDL_RenderFillRect(renderer, &rectangle02);
 
   SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
   SDL_RenderDrawRect(renderer, &rectangle03);
+  rectangle03.x += 5;
+  rectangle03.y += 5;
+  rectangle03.w -= 10;
+  rectangle03.h -= 10;
+  SDL_RenderFillRect(renderer, &rectangle03);
 
   while (appIsRunning) { // Application Loop
 
