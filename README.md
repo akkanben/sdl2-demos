@@ -4,7 +4,7 @@ This repository is a series of demo projects to learn SDL2. SDL is written in C 
 
 ## Compiling
 
-After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link the SDL2 library with the `-lSDL2` flag. E.g. `g++ main.cpp -o demo -lSDL2`
+After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link the SDL2 library with the `-lSDL2` flag. E.g. `g++ main.cpp -o demo -lSDL2`. These demos were written on a Linux system, if compiling on Mac or Windows you may need to adjust the SDL2 library includes from `#include "SDL2/SDL.h"` to `#include "SDL.h"`.
 
 ## Demos
 
