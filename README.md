@@ -30,3 +30,12 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 - Add lines of random colors at random locations with the spacebar. 
 - The delete key clears the window with the last color set to the renderer.
 - [SDL_CreateRenderer](https://wiki.libsdl.org/SDL_CreateRenderer) returns a context to render 2D graphics for a window.
+
+### Sprite Class
+
+- Adds a class to handle textured rectangles.
+- Uses [SDL_CreateTextureFromSurface](https://wiki.libsdl.org/SDL_CreateTextureFromSurface) to use a surface with a .bmp file attached to it to create a texture.
+- Applies the texture to a rectangle.
+- Includes a color keying option to apply a transparancy to a specific color. 
+- The demo attaches a color keyed hero sprite to the mouse x/y positions. 
+- The mouse wheel can scale the hero sprite up or down.
