@@ -23,3 +23,10 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 
 - Uses [SDL_GetWindowSurface](https://wiki.libsdl.org/SDL_GetWindowSurface) and [SDL_BlitSurface](https://wiki.libsdl.org/SDL_BlitSurface) to apply .bmp images to the window.
 - Cycle through 5 images with the spacebar.
+
+### Simple Renderer
+
+- Renders 3 filled rectangles and 3 drawn rectangles to the window 
+- Add lines of random colors at random locations with the spacebar. 
+- The delete key clears the window with the last color set to the renderer.
+- [SDL_CreateRenderer](https://wiki.libsdl.org/SDL_CreateRenderer) returns a context to render 2D graphics for a window.
