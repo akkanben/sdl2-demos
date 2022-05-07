@@ -35,7 +35,17 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 
 - Adds a class to handle textured rectangles.
 - Uses [SDL_CreateTextureFromSurface](https://wiki.libsdl.org/SDL_CreateTextureFromSurface) to use a surface with a .bmp file attached to it to create a texture.
-- Applies the texture to a rectangle.
+- Applies the texture to a rectangle with [SDL_RenderCopy](https://wiki.libsdl.org/SDL_RenderCopy).
 - Includes a color keying option to apply a transparancy to a specific color. 
 - The demo attaches a color keyed hero sprite to the mouse x/y positions. 
 - The mouse wheel can scale the hero sprite up or down.
+
+### Animated Sprite Class
+
+- A class to handle sprite animation. 
+- Designed for a texture that has frames of animation in a horizonal layout.
+- Makes use of the third argument in [SDL_RenderCopy](https://wiki.libsdl.org/SDL_RenderCopy) to use a selected part of a texture. 
+- Allows for optional custom sequence for repeating frames.
+- The demo animates a hero sprite attached to the mouse motion with a 3 frame spritesheet. 
+- A custom sequence is attached to the flashing block also with a 3 frame spritesheet. The animation uses 9 ticks in total because of the custom sequence.
+- The demo ajusts the application loop to update the game at 60 FPS and animate the sprites at 8 FPS

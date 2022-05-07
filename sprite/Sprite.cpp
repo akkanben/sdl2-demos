@@ -23,6 +23,10 @@ void Sprite::setPosition(int x, int y) {
   mRectangle.y = y;
 }
 
+void Sprite::setX(int x) { mRectangle.x = x; }
+
+void Sprite::setY(int y) { mRectangle.y = y; }
+
 void Sprite::setSize(int width, int height) {
   mRectangle.w = width;
   mRectangle.h = height;
@@ -39,8 +43,14 @@ void Sprite::setColorKey(std::string texturePath, Uint8 redKey, Uint8 greenKey, 
   SDL_FreeSurface(surface);
 }
 
+SDL_Texture *Sprite::getTexture() { return mTexture; }
+
+SDL_Rect *Sprite::getRectangle() { return &mRectangle; }
+
 int Sprite::getWidth() { return mRectangle.w; }
 
 int Sprite::getHeight() { return mRectangle.h; }
+
+SDL_Renderer *Sprite::getRenderer() { return mRenderer; }
 
 void Sprite::render() { SDL_RenderCopy(mRenderer, mTexture, NULL, &mRectangle); }
