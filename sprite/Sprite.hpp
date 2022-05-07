@@ -11,10 +11,15 @@ public:
   ~Sprite();
 
   void setPosition(int x, int y);
+  void setX(int x);
+  void setY(int y);
   void setSize(int width, int height);
   void setColorKey(std::string texturePath, Uint8 redKey, Uint8 greenKey, Uint8 blueKey);
+  SDL_Texture *getTexture();
+  SDL_Rect *getRectangle();
   int getWidth();
   int getHeight();
+  SDL_Renderer *getRenderer();
   void render();
 
 private:
