@@ -33,17 +33,17 @@ int main() {
 
   SDL_FreeSurface(surface);
 
-  SDL_Rect rectangle;
+  SDL_Rect rectangle1;
   int size = 450;
-  rectangle.x = (640 - size) / 2;
-  rectangle.y = (480 - size) / 2;
-  rectangle.w = size;
-  rectangle.h = size;
+  rectangle1.x = (640 - size) / 2;
+  rectangle1.y = (480 - size) / 2;
+  rectangle1.w = size;
+  rectangle1.h = size;
 
   int offset = 10;
   SDL_Rect rectangle2;
-  rectangle.x = (640 - size + offset) / 2;
-  rectangle.y = (480 - size + offset) / 2;
+  rectangle2.x = (640 - size + offset) / 2;
+  rectangle2.y = (480 - size + offset) / 2;
   rectangle2.w = size / 2;
   rectangle2.h = size / 2;
 
@@ -53,7 +53,7 @@ int main() {
   bool isSizeGrowing = true;
   bool isOffsetGrowing = true;
   bool appIsRunning = true;
-  bool flip = false;
+  bool flip = false; // Toggle rendering rectangle order
   while (appIsRunning) {
 
     SDL_Event event;
@@ -78,10 +78,10 @@ int main() {
           offset++;
         size++;
         // rect1
-        rectangle.h = size;
-        rectangle.w = size;
-        rectangle.x = (640 - size) / 2;
-        rectangle.y = (480 - size) / 2;
+        rectangle1.h = size;
+        rectangle1.w = size;
+        rectangle1.x = (640 - size) / 2;
+        rectangle1.y = (480 - size) / 2;
 
         // rect2
         rectangle2.h = size + offset;
@@ -92,19 +92,19 @@ int main() {
         if (!isOffsetGrowing)
           offset--;
         size--;
-        rectangle.h = size;
-        rectangle.w = size;
-        rectangle.x = (640 - size) / 2;
-        rectangle.y = (480 - size) / 2;
+        rectangle1.h = size;
+        rectangle1.w = size;
+        rectangle1.x = (640 - size) / 2;
+        rectangle1.y = (480 - size) / 2;
 
         rectangle2.h = size + offset;
         rectangle2.w = size + offset;
         rectangle2.x = (640 - size + offset) / 2;
         rectangle2.y = (480 - size + offset) / 2;
       }
-      if (rectangle.w > 500)
+      if (rectangle1.w > 500)
         isSizeGrowing = false;
-      if (rectangle.w < 400)
+      if (rectangle1.w < 400)
         isSizeGrowing = true;
       if (offset > 5)
         isOffsetGrowing = false;
@@ -118,9 +118,9 @@ int main() {
 
     if (flip) {
       SDL_RenderCopy(renderer, texture2, NULL, &rectangle2);
-      SDL_RenderCopy(renderer, texture, NULL, &rectangle);
+      SDL_RenderCopy(renderer, texture, NULL, &rectangle1);
     } else {
-      SDL_RenderCopy(renderer, texture, NULL, &rectangle);
+      SDL_RenderCopy(renderer, texture, NULL, &rectangle1);
       SDL_RenderCopy(renderer, texture2, NULL, &rectangle2);
     }
 
