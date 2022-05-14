@@ -16,15 +16,21 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 
 ### Simple Events
 
+![event animation](./readme-res/events.gif)
+
 - Uses the [SDL_PollEvent](https://wiki.libsdl.org/SDL_PollEvent) queue to log keyboard presses and mouse movements.
 - Prints to the console the name of the key pressed, the coordinates of the mouse movement, or quits the application when the window close button is pressed.
 
 ### Simple Surface
 
+![surface animation](./readme-res/surface.gif)
+
 - Uses [SDL_GetWindowSurface](https://wiki.libsdl.org/SDL_GetWindowSurface) and [SDL_BlitSurface](https://wiki.libsdl.org/SDL_BlitSurface) to apply .bmp images to the window.
 - Cycle through 5 images with the spacebar.
 
 ### Simple Renderer
+
+![renderer animation](./readme-res/renderer.gif)
 
 - Renders 3 filled rectangles and 3 drawn rectangles to the window 
 - Add lines of random colors at random locations with the spacebar. 
@@ -32,6 +38,8 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 - [SDL_CreateRenderer](https://wiki.libsdl.org/SDL_CreateRenderer) returns a context to render 2D graphics for a window.
 
 ### Sprite Class
+
+![sprite animation](./readme-res/sprite.gif)
 
 - Adds a class to handle textured rectangles.
 - Uses [SDL_CreateTextureFromSurface](https://wiki.libsdl.org/SDL_CreateTextureFromSurface) to use a surface with a .bmp file attached to it to create a texture.
@@ -42,6 +50,8 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 
 ### Animated Sprite Class
 
+![animated sprite animation](./readme-res/animated-sprite.gif)
+
 - A class to handle sprite animation. 
 - Designed for a texture that has frames of animation in a horizonal layout.
 - Makes use of the third argument in [SDL_RenderCopy](https://wiki.libsdl.org/SDL_RenderCopy) to use a selected part of a texture. 
@@ -49,3 +59,13 @@ After [installing SDL2](https://wiki.libsdl.org/Installation) compile and link t
 - The demo animates a hero sprite attached to the mouse motion with a 3 frame spritesheet. 
 - A custom sequence is attached to the flashing block also with a 3 frame spritesheet. The animation uses 9 ticks in total because of the custom sequence.
 - The demo ajusts the application loop to update the game at 60 FPS and animate the sprites at 8 FPS
+
+### Fonts Demo
+
+![font animation](./readme-res/font.gif)
+
+- Renders a TTF font with simple animation.
+- Uses the [SDL_ttf](https://www.libsdl.org/projects/docs/SDL_ttf/SDL_ttf.html) add on library.
+- Install "SDL\_ttf" and compiling with `-lSDL2_ttf` flag.
+- The demo animates the text in a simple loop.
+- The spacebar toggles which text rectangle gets rendered first.
